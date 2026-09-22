@@ -98,14 +98,14 @@ void stream_test()
     lbp->BuildLoggerType(LogModule::LoggerType::LOGGER_SYNC);
     lbp->Build();
 
-    LOGD_STREAM << "============= 流式输出示范(默认根日志器) =============";
-    LOGD_STREAM << "LOGD_STREAM : " << "字符串" << " " << 42 << " " << 3.14;
-    LOGI_STREAM << "LOGI_STREAM : bool=" << true << " char=" << 'x' << " ptr=" << (void*)0x1a2b3c;
-    LOGW_STREAM << "LOGW_STREAM : " << std::string("world");
-    LOGE_STREAM << "LOGE_STREAM : dec=" << 255 << " hex=" << std::hex << 255;
-    LOGF_STREAM << "LOGF_STREAM : " << 0xDEADBEEF;
+    LOGD_STREAM() << "============= 流式输出示范(默认根日志器) =============";
+    LOGD_STREAM() << "LOGD_STREAM : " << "字符串" << " " << 42 << " " << 3.14;
+    LOGI_STREAM() << "LOGI_STREAM : bool=" << true << " char=" << 'x' << " ptr=" << (void*)0x1a2b3c;
+    LOGW_STREAM() << "LOGW_STREAM : " << std::string("world");
+    LOGE_STREAM() << "LOGE_STREAM : dec=" << 255 << " hex=" << std::hex << 255;
+    LOGF_STREAM() << "LOGF_STREAM : " << 0xDEADBEEF;
 
-    LOGD_STREAM << "============= 流式输出示范(指定日志器stream_logger) =============";
+    LOGD_STREAM() << "============= 流式输出示范(指定日志器stream_logger) =============";
     Logger::ptr logger = GetLogger("stream_logger");
     LOG_DEBUG_STREAM(logger) << "LOG_DEBUG_STREAM : value=" << 100;
     LOG_INFOR_STREAM(logger) << "LOG_INFOR_STREAM : " << __FILE__;
